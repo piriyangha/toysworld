@@ -39,7 +39,7 @@
 						</label>
 					</div>
 					<button type="submit" class="btn">Login</button>
-					>
+					
 			</div>
 			<div>
 				<a href="#"><ins>Forget password?</ins></a>

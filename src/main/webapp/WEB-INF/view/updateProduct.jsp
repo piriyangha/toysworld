@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@taglib prefix="springForm"
 	uri="http://www.springframework.org/tags/form"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -22,45 +23,47 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 
 	}
 	</style>
+	<c:set var="contextRoot" value="${pagecontext.request.contextRoot}"> </c:set>
+	
 </head>
 
 <body>
 	
 	<div class="container">
-		<h2 style="text-align: center; color:purple;"> Add Product </h2>
+		<h2 style="text-align: center; color:purple;"> Update Product </h2>
 		<br>
 		<springForm:form action="saveproduct" method="POST"
-			modelAttribute="product">
+			modelAttribute="products">
 			<div class="form-group">
 				<springForm:label class="control-label col-sm-4" style="text-align:right;color:maroon;" path="Pname">Product Name:</springForm:label> 
 					<div class="control-label col-sm-4 col-sm-4">
-					<springForm:input  path="pname" class="form-control"
-						placeholder="Enter product name" />
+					<springForm:input  path="pname" class="form-control"  value="${products.pname}"
+						placeholder="Enter product name"/>
 				</div>
 				</div>
-				<br><br>	<br>
+				<br><br><br>
 				
 			<div class="form-group">
 				<springForm:label class="control-label col-sm-4" style="text-align:right; color:maroon;" path="Brandname">Brandname:</springForm:label> 
 					<div class="control-label col-sm-4 col-sm-4">
-					<springForm:input   path="brandname" class="form-control"
-						placeholder="Enter brandname" />
+					<springForm:input   path="brandname" class="form-control" value="${products.brandname}"
+						placeholder="Enter brandname"/>
 				</div>
 				</div>
 				<br>	<br>
 			<div class="form-group">
 				<springForm:label class="control-label col-sm-4" style="text-align:right; color:maroon;" path="Stock">Stock:</springForm:label> 
 					<div class="control-label col-sm-4 col-sm-4">
-					<springForm:input  path="stock" class="form-control"
-						placeholder="Enter stock" />
+					<springForm:input  path="stock" class="form-control" value="${products.stock}"
+						placeholder="Enter stock"/>
 				</div>
 				</div>
 			<br>	<br>
 				<div class="form-group">
 				<springForm:label class="control-label col-sm-4" style="text-align:right; color:maroon;" path="Price">price:</springForm:label> 
 					<div class="control-label col-sm-4 col-sm-4">
-					<springForm:input  path="price" class="form-control"
-						placeholder="Enter price" />
+					<springForm:input  path="price" class="form-control" value="${products.price}"
+						placeholder="Enter price"/>
 				</div>
 				</div>
 			<br><br>
