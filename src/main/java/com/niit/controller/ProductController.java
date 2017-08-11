@@ -31,9 +31,10 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="/saveproduct", method=RequestMethod.POST)
-	public String saveProduct(@ModelAttribute ("product") Product product) 
+	public String saveProduct(@ModelAttribute("product") Product product) 
 	{    
 		  productdao.saveProduct(product);
+		  System.out.println("value is saved");
 	      return "redirect:/ProductList";
 	  }
 	
@@ -49,12 +50,12 @@ public class ProductController {
 		return "ProductList";	
 	}
 	
-	@RequestMapping(value="/editProduct/{pid}")
+	@RequestMapping(value="/updateProduct/{pid}",method=RequestMethod.POST)
 	public String editProduct(@PathVariable int pid, Model model)
-	{   System.out.println("in edit controller");
+	{  
 		Product product=productdao.getProductById(pid);
-		model.addAttribute("products", product);
-		System.out.println("pid value is :"+pid);
+		productdao.updateProduct(product);
+		model.addAttribute("products",product);
 		return"updateProduct";
 	}
 	

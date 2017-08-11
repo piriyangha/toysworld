@@ -12,7 +12,7 @@
 <body>
 
   <h2>List product</h2>
- <table align="left" border="1">
+ <table align="left" border="1" style="border-collapse:collapse">
   <tr>
    <th>Product ID</th>
    <th>Product Name</th>
@@ -29,7 +29,7 @@
     <td><c:out value="${pro.price}"/></td>
     <td><c:out value="${pro.brandname}"/></td>
     <td><c:out value="${pro.stock}"/></td>
-    <td align="center"><a href=<c:url value="/editProduct/${pro.pid}"/>>Edit</a>  <a href=<c:url value="/viewProduct/${pro.pid}"/>>view</a><a href=<c:url value="/deleteProduct/${pro.pid}"/>>Delete</a></td>
+    <td align="center"><a href=<c:url value="/updateProduct/${pro.pid}"/>>Update</a>  <a href=<c:url value="/viewProduct/${pro.pid}"/>>view</a><a href=<c:url value="/deleteProduct/${pro.pid}"/>>Delete</a></td>
   </tr>
   </c:forEach>
  </table>

@@ -3,11 +3,11 @@
     <%@taglib prefix="springForm"
 	uri="http://www.springframework.org/tags/form"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    
+    <%@page isELIgnored="false"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Add product</title>
+<title>Update product</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -32,10 +32,9 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 	<div class="container">
 		<h2 style="text-align: center; color:purple;"> Update Product </h2>
 		<br>
-		<springForm:form action="saveproduct" method="POST"
-			modelAttribute="products">
+		<springForm:form action="/ProductList" method="POST" modelAttribute="products">
 			<div class="form-group">
-				<springForm:label class="control-label col-sm-4" style="text-align:right;color:maroon;" path="Pname">Product Name:</springForm:label> 
+				<springForm:label class="control-label col-sm-4" style="text-align:right;color:maroon;" path="pname">Product Name:</springForm:label> 
 					<div class="control-label col-sm-4 col-sm-4">
 					<springForm:input  path="pname" class="form-control"  value="${products.pname}"
 						placeholder="Enter product name"/>
@@ -43,8 +42,11 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 				</div>
 				<br><br><br>
 				
+					<springForm:hidden  path="pid" class="form-control"/>
+				
+				
 			<div class="form-group">
-				<springForm:label class="control-label col-sm-4" style="text-align:right; color:maroon;" path="Brandname">Brandname:</springForm:label> 
+				<springForm:label class="control-label col-sm-4" style="text-align:right; color:maroon;" path="brandname">Brandname:</springForm:label> 
 					<div class="control-label col-sm-4 col-sm-4">
 					<springForm:input   path="brandname" class="form-control" value="${products.brandname}"
 						placeholder="Enter brandname"/>
@@ -52,7 +54,7 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 				</div>
 				<br>	<br>
 			<div class="form-group">
-				<springForm:label class="control-label col-sm-4" style="text-align:right; color:maroon;" path="Stock">Stock:</springForm:label> 
+				<springForm:label class="control-label col-sm-4" style="text-align:right; color:maroon;" path="stock">Stock:</springForm:label> 
 					<div class="control-label col-sm-4 col-sm-4">
 					<springForm:input  path="stock" class="form-control" value="${products.stock}"
 						placeholder="Enter stock"/>
@@ -60,7 +62,7 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 				</div>
 			<br>	<br>
 				<div class="form-group">
-				<springForm:label class="control-label col-sm-4" style="text-align:right; color:maroon;" path="Price">price:</springForm:label> 
+				<springForm:label class="control-label col-sm-4" style="text-align:right; color:maroon;" path="price">price:</springForm:label> 
 					<div class="control-label col-sm-4 col-sm-4">
 					<springForm:input  path="price" class="form-control" value="${products.price}"
 						placeholder="Enter price"/>
