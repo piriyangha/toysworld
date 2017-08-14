@@ -24,15 +24,15 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 	}
 	</style>
 	<c:set var="contextRoot" value="${pagecontext.request.contextRoot}"> </c:set>
-	
+	<c:url value="/all/product/updateproduct" var="url"></c:url>
 </head>
 
 <body>
 	
 	<div class="container">
-		<h2 style="text-align: center; color:purple;"> Update Product </h2>
+		<h2 style="text-align:center; color:purple;"> Update Product </h2>
 		<br>
-		<springForm:form action="/ProductList" method="POST" modelAttribute="products">
+		<springForm:form  action="${url}"	modelAttribute="products">
 			<div class="form-group">
 				<springForm:label class="control-label col-sm-4" style="text-align:right;color:maroon;" path="pname">Product Name:</springForm:label> 
 					<div class="control-label col-sm-4 col-sm-4">
@@ -42,7 +42,7 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 				</div>
 				<br><br><br>
 				
-					<springForm:hidden  path="pid" class="form-control"/>
+					<springForm:input type="hidden"  path="pid" class="form-control"/>
 				
 				
 			<div class="form-group">

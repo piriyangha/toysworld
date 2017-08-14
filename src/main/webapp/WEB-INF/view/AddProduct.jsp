@@ -44,7 +44,7 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 				<springForm:label class="control-label col-sm-4" style="text-align:right; color:maroon;" path="Brandname">Brandname:</springForm:label> 
 					<div class="control-label col-sm-4 col-sm-4">
 					<springForm:input   path="brandname" class="form-control"
-						placeholder="Enter brandname" />
+						placeholder="Enter brandname"/>
 				</div>
 				</div>
 				<br>	<br>

@@ -50,14 +50,20 @@ public class ProductController {
 		return "ProductList";	
 	}
 	
-	@RequestMapping(value="/updateProduct/{pid}",method=RequestMethod.POST)
-	public String editProduct(@PathVariable int pid, Model model)
+	@RequestMapping(value={"/all/product/editform/{pid}"})
+	public String editForm(@PathVariable int pid, Model model)
 	{  
 		Product product=productdao.getProductById(pid);
-		productdao.updateProduct(product);
 		model.addAttribute("products",product);
 		return"updateProduct";
 	}
-	
+				
+	@RequestMapping(value={"/all/product/updateproduct"})				
+	public String updateProduct(@ModelAttribute(name="products") Product product)
+	{   System.out.println("product is updated");
+		productdao.updateProduct(product);
+		System.out.println("product is updated++");
+		return "redirect:/index";
+	}
 	
 }
