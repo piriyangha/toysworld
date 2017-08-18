@@ -14,12 +14,13 @@
   <h2>List product</h2>
  <table align="left" border="1" style="border-collapse:collapse">
   <tr>
-   <th>Product ID</th>
-   <th>Product Name</th>
-   <th>Product Price</th>
-   <th>Product Brandname</th>
-   <th> stock</th>
-   <th>Actions</th>
+   <th> Product ID </th>
+   <th> Product Name </th>
+   <th> Product Price </th>
+   <th>  Brandname  </th>
+   <th> STOCK </th>
+   <th> Category </th>
+   <th> Actions </th>
   </tr>
 
   <c:forEach items="${product}" var="pro">
@@ -29,6 +30,7 @@
     <td><c:out value="${pro.price}"/></td>
     <td><c:out value="${pro.brandname}"/></td>
     <td><c:out value="${pro.stock}"/></td>
+    <td><c:out value="${pro.category.catname}"/></td>
     <td align="center"><a href=<c:url value="/all/product/editform/${pro.pid}"/>>Update</a>  <a href=<c:url value="/viewProduct/${pro.pid}"/>>view</a><a href=<c:url value="/deleteProduct/${pro.pid}"/>>Delete</a></td>
   </tr>
   </c:forEach>

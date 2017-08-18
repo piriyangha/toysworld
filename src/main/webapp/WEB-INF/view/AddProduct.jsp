@@ -64,6 +64,17 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 				</div>
 				</div>
 			<br><br>
+			
+			<div class="form-group">
+				<springForm:label class="control-label col-sm-4" style="text-align:right; color:maroon;" path="Category.cid">Select Category:</springForm:label> 
+					<div class="control-label col-sm-4 col-sm-4">
+					<c:forEach items="${cat}" var="c">
+					<springForm:radiobutton  path="Category.cid" value="${c.cid}"/>${c.catname}
+					</c:forEach>
+				
+				</div>
+			<br><br>
+			
 			<div class="form-group">
 			<div class="col-sm-12">
 			<div class= "text-center">

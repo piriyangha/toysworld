@@ -22,7 +22,7 @@
 		<div class="col-lg-3"></div>
 		<div class="col-lg-3">
 			<div class-"jumbodron" style="margin-top: 150px">
-				<h4 style="color: Blue"text-align:"center">Welcome to Toysworld
+				<h4 style="color: Blue"text-align:center">Welcome to Toysworld
 					Login Page</h4>
 				<form>
 					<div class="form-group">

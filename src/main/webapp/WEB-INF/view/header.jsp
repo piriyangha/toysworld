@@ -40,13 +40,22 @@ body {
 	<div class="container">
 		<ul class="nav navbar-nav" style="color: white">
 			<li><a href="#"> Home <span class="glyphicon glyphicon-home"></span></a></li>
-			<li><a href="#"> Shop All Catagories <span
-					class="glyphicon glyphicon-list"></span></a></li>
-			<li><a href="#"> Our Brands <span
-					class="glyphicon glyphicon-chevron-down"></a></li>
+			<li class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#"> Shop All Catagories <span
+					class="glyphicon glyphicon-list"></span></a>
+					<ul class="dropdown-menu">
+					<li class="dropdown-header"> Toys For Kids(2 yrs+)</li>
+      					<li><a href="#">Educational Toys</a></li>
+    				    <li><a href="#">Remote Cars</a></li>
+     				    <li><a href="#">Soft Toys</a></li>
+     				    <li><a href="#">Dolls</a></li>
+     				    </li>
+   					 </ul>
+			 
 			<li><a href="#"> Contact <span
 					class="glyphicon glyphicon-chevron-down"></a></li>
 			<li><a href="addproduct"> Addproduct </a></li>
+			<li><a href="addcategory"> Addcategory </a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="register"><span class="glyphicon glyphicon-user"></span>

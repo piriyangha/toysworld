@@ -10,19 +10,38 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
+
+import com.niit.dao.CategoryDao;
 import com.niit.dao.ProductDao;
+import com.niit.model.Category;
 import com.niit.model.Product;
 
 @Controller 
 @Transactional
-public class ProductController {
+public class ProductCategoryController {
 	@Autowired
 	ProductDao productdao;
-	@RequestMapping("/addproduct")
+	@Autowired
+	CategoryDao categorydao;
 	
+	@RequestMapping("/addcategory")
+	public String showAddCategory(Model model )
+	{
+		model.addAttribute("cat",new Category());
+		return "AddCategory";
+		
+	}
+	
+	@RequestMapping(value="/savecategory", method=RequestMethod.POST)
+	public String saveProduct(@ModelAttribute("cat") Category cat) 
+	{    
+		categorydao.saveCategory(cat);
+		  System.out.println("value is saved");
+	      return "redirect:/ProductList";
+	  }
+	
+	@RequestMapping("/addproduct")
 	public String showAddProduct(Model model )
 	{
 		model.addAttribute("product",new Product());
@@ -39,9 +58,11 @@ public class ProductController {
 	  }
 	
 	@RequestMapping(value="/ProductList")
-	public String showAllProduct(Model model){
+	public String showAllProduct(Model model)
+	{   List<Category> category=categorydao.retrieveAllCategory();
 		List<Product> products=productdao.getAllProducts();
 		model.addAttribute("product",products);
+		model.addAttribute("cat",category);
 		return "ProductList";	
 	}
 	@RequestMapping(value="/deleteProduct/{pid}")
