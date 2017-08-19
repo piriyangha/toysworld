@@ -70,6 +70,16 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 				</div>
 			<br><br>
 			<div class="form-group">
+			<springForm:label class="control-label col-sm-4" style="text-align:right; color:maroon;" path="category"> Category:</springForm:label> 
+				<div class="control-label col-sm-4 col-sm-4">
+				<select class="form-control" name="category">
+				<option value="0">----select category----</option>
+				<c:forEach var="c" items="${cat}" > 
+				<option value="${c.cid}">${c.catname}</option></c:forEach>
+				</select>
+				</div>
+				</div><br><br>
+			<div class="form-group">
 			<div class="col-sm-12">
 			<div class= "text-center">
 			<input type="submit" class="btn btn-info btn-lg" value="submit"/>

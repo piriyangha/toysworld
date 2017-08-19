@@ -18,7 +18,7 @@
    <th> Product Name </th>
    <th> Product Price </th>
    <th>  Brandname  </th>
-   <th> STOCK </th>
+   <th> Stock </th>
    <th> Category </th>
    <th> Actions </th>
   </tr>

@@ -56,6 +56,7 @@ body {
 					class="glyphicon glyphicon-chevron-down"></a></li>
 			<li><a href="addproduct"> Addproduct </a></li>
 			<li><a href="addcategory"> Addcategory </a></li>
+			<li><a href="ProductList"> ProductList </a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="register"><span class="glyphicon glyphicon-user"></span>

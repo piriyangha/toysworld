@@ -27,23 +27,24 @@ public class ProductCategoryController {
 	
 	@RequestMapping("/addcategory")
 	public String showAddCategory(Model model )
-	{
-		model.addAttribute("cat",new Category());
+	{   
+		model.addAttribute("category",new Category());
 		return "AddCategory";
 		
 	}
 	
-	@RequestMapping(value="/savecategory", method=RequestMethod.POST)
-	public String saveProduct(@ModelAttribute("cat") Category cat) 
+	@RequestMapping(value="/savecat", method=RequestMethod.POST)
+	public String saveCategory(@ModelAttribute("category") Category category) 
 	{    
-		categorydao.saveCategory(cat);
+		  categorydao.saveCategory(category);
 		  System.out.println("value is saved");
 	      return "redirect:/ProductList";
 	  }
 	
 	@RequestMapping("/addproduct")
 	public String showAddProduct(Model model )
-	{
+	{   List<Category> category=categorydao.retrieveAllCategory();
+	    model.addAttribute("cat",category);
 		model.addAttribute("product",new Product());
 		return "AddProduct";
 		
