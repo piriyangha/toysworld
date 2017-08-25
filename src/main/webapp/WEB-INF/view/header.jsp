@@ -53,7 +53,7 @@ body {
    					 </ul>
 			 
 			<li><a href="#"> Contact <span
-					class="glyphicon glyphicon-chevron-down"></a></li>
+					class="glyphicon glyphicon-chevron-down"></span></a></li>
 			<li><a href="addproduct"> Addproduct </a></li>
 			<li><a href="addcategory"> Addcategory </a></li>
 			<li><a href="ProductList"> ProductList </a></li>

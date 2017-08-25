@@ -16,10 +16,11 @@
   <tr>
    <th> Product ID </th>
    <th> Product Name </th>
-   <th> Product Price </th>
-   <th>  Brandname  </th>
-   <th> Stock </th>
    <th> Category </th>
+   <th> Brandname  </th>
+   <!-- <th> Image </th> -->
+   <th> Product Price </th>
+   <th> Stock </th>
    <th> Actions </th>
   </tr>
 
@@ -27,10 +28,13 @@
    <tr>
     <td><c:out value="${pro.pid}"/></td>
     <td><c:out value="${pro.pname}"/></td>
-    <td><c:out value="${pro.price}"/></td>
-    <td><c:out value="${pro.brandname}"/></td>
-    <td><c:out value="${pro.stock}"/></td>
     <td><c:out value="${pro.category.catname}"/></td>
+    <td><c:out value="${pro.brandname}"/></td>
+    <c:url value="/resource/image/${pro.pid}.jpg" var="url"/>
+    <td><img src="${url}" height="100" width="80"></td> 
+    <td><c:out value="${pro.price}"/></td>
+    <td><c:out value="${pro.stock}"/></td>
+    
     <td align="center"><a href=<c:url value="/all/product/editform/${pro.pid}"/>>Update</a>  <a href=<c:url value="/viewProduct/${pro.pid}"/>>view</a><a href=<c:url value="/deleteProduct/${pro.pid}"/>>Delete</a></td>
   </tr>
   </c:forEach>

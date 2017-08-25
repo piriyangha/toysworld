@@ -70,15 +70,29 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 				</div>
 			<br><br>
 			<div class="form-group">
-			<springForm:label class="control-label col-sm-4" style="text-align:right; color:maroon;" path="category"> Category:</springForm:label> 
+				<springForm:label class="control-label col-sm-4"
+					style="text-align:right; color:maroon;" path="">Select category:</springForm:label>
 				<div class="control-label col-sm-4 col-sm-4">
-				<select class="form-control" name="category">
-				<option value="0">----select category----</option>
-				<c:forEach var="c" items="${cat}" > 
-				<option value="${c.cid}">${c.catname}</option></c:forEach>
-				</select>
+					<springForm:select class="form-control" path="category.cid">
+						<springForm:option value="0" label="----select category----" />
+						<c:forEach var="c" items="${cat}">
+							<springForm:option value="${c.cid}" label="${c.catname}" />
+						</c:forEach>
+					</springForm:select>
+
 				</div>
-				</div><br><br>
+			</div>
+			<br>
+			<br>
+			<div class="form-group">
+			<springForm:label class="control-label col-sm-4"
+					style="text-align:right; color:maroon;" path="image"> Upload Image:</springForm:label>
+					<div class="control-label col-sm-4 col-sm-4">
+			 <springForm:input type="file" path="image" class="form-control"
+						placeholder="upload image" />
+			</div>
+			</div>
+			<br><br><br> 
 			<div class="form-group">
 			<div class="col-sm-12">
 			<div class= "text-center">
