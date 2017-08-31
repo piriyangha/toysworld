@@ -18,7 +18,7 @@
    <th> Product Name </th>
    <th> Category </th>
    <th> Brandname  </th>
-   <!-- <th> Image </th> -->
+    <th> Product Image </th> 
    <th> Product Price </th>
    <th> Stock </th>
    <th> Actions </th>
@@ -35,7 +35,7 @@
     <td><c:out value="${pro.price}"/></td>
     <td><c:out value="${pro.stock}"/></td>
     
-    <td align="center"><a href=<c:url value="/all/product/editform/${pro.pid}"/>>Update</a>  <a href=<c:url value="/viewProduct/${pro.pid}"/>>view</a><a href=<c:url value="/deleteProduct/${pro.pid}"/>>Delete</a></td>
+    <td align="center"><a href=<c:url value="/all/product/editform/${pro.pid}"/>>Update</a>  <a href=<c:url value="/all/product/viewProduct/${pro.pid}"/>>view</a><a href=<c:url value="/deleteProduct/${pro.pid}"/>>Delete</a></td>
   </tr>
   </c:forEach>
  </table>

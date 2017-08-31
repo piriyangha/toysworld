@@ -14,38 +14,43 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+<style>
+	body
+	{
+	
+background-image:url(" http://www.planwallpaper.com/static/images/33.jpg");
+
+	}
+	</style>
+
 </head>
 <body>
 
-	
+	<form>
 	<div class="container">
-		<div class="col-lg-3"></div>
-		<div class="col-lg-3">
-			<div class-"jumbodron" style="margin-top: 150px">
-				<h4 style="color: Blue"text-align:center">Welcome to Toysworld
-					Login Page</h4>
-				<form>
-					<div class="form-group">
-						Username: <input type="email" class="form-control"
-							placeholder="enter email  id">
-					</div>
-					<div class="form-group">
-						Password: <input type="password" class="form-control"
-							placeholder="enter your password">
-					</div>
-
-					<div class="checkbox">
-						<label> <input type="checkbox"> Remember me
-						</label>
-					</div>
-					<button type="submit" class="btn">Login</button>
-					
-			</div>
-			<div>
-				<a href="#"><ins>Forget password?</ins></a>
-			</div>
-
-			</form>
-		</div>
-	</div>
-	</div>
+		<div class="row">
+        <div class="col-md-offset-5 col-md-3">
+            <div class="form-login">
+			<br><br><br>
+				<h4 style="color:purple; text-align:center">Welcome To Toysworld
+					</h4>
+           
+      Username:       <input type="username" name="username" class="form-control input-sm chat-input" placeholder="username" />
+            <br>
+      Password:      <input type="password" name="password" class="form-control input-sm chat-input" placeholder="password" />
+            <br>
+            <div class="wrapper">
+            <span class="group-btn">     
+                <input type="submit" value="Login"> <i class="fa fa-sign-in"></i>
+            </span>
+            </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+</form>
+</body>	
+</html>				
+				

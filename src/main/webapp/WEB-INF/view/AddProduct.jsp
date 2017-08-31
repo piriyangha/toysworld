@@ -32,13 +32,14 @@ body {
 		<h2 style="text-align: center; color: purple;">Add Product</h2>
 		<br>
 		<springForm:form action="${contextRoot}/saveproduct" method="POST"
-			modelAttribute="product" enctype="multipart/form-data">
+			modelAttribute="product">
 			<div class="form-group">
 				<springForm:label class="control-label col-sm-4"
 					style="text-align:right;color:maroon;" path="pname">Product Name:</springForm:label>
 				<div class="control-label col-sm-4 col-sm-4">
 					<springForm:input path="pname" class="form-control"
-						placeholder="Enter product name" />
+						placeholder="Enter product name"/>
+						<springForm:errors path="pname"></springForm:errors>
 				</div>
 			</div>
 			<br>
@@ -52,6 +53,7 @@ body {
 				<div class="control-label col-sm-4 col-sm-4">
 					<springForm:input path="brandname" class="form-control"
 						placeholder="Enter brandname" />
+						
 				</div>
 			</div>
 			<br>
@@ -61,7 +63,8 @@ body {
 					style="text-align:right; color:maroon;" path="stock">Stock:</springForm:label>
 				<div class="control-label col-sm-4 col-sm-4">
 					<springForm:input path="stock" class="form-control"
-						placeholder="Enter stock" />
+						placeholder="Enter stock"/>
+						
 				</div>
 			</div>
 			<br>
@@ -72,6 +75,7 @@ body {
 				<div class="control-label col-sm-4 col-sm-4">
 					<springForm:input path="price" class="form-control"
 						placeholder="Enter price" />
+						<%-- <springForm:errors path="price"></springForm:errors> --%>
 				</div>
 			</div>
 			<br>
@@ -89,8 +93,9 @@ body {
 
 				</div>
 			</div>
+			<%-- <br>
 			<br>
-			<br>
+			
 			<div class="form-group">
 			<springForm:label class="control-label col-sm-4"
 					style="text-align:right; color:maroon;" path="image"> Upload Image:</springForm:label>
@@ -98,7 +103,7 @@ body {
 			 <springForm:input type="file" path="image" class="form-control"
 						placeholder="upload image" />
 			</div>
-			</div>
+			</div> --%>
 			<br><br><br> 
 
 
