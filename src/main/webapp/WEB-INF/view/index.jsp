@@ -44,8 +44,7 @@
 						style="width: 100%;"></a>
 				</div>
 				<div class="item ">
-					<a href="# "><img src="resource\image\baby.jpg
-        "
+					<a href="# "><img src="resource\image\baby.jpg"
 						style="width: 100%;"></a>
 					<div class="carousel-caption ">
 						<h1 style="color: blue;">The Lego</h1>

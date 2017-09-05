@@ -71,7 +71,7 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 			<br><br>
 			<div class="form-group">
 				<springForm:label class="control-label col-sm-4"
-					style="text-align:right; color:maroon;" path="">Select category:</springForm:label>
+					style="text-align:right; color:maroon;" path="category.cid">Select category:</springForm:label>
 				<div class="control-label col-sm-4 col-sm-4">
 					<springForm:select class="form-control" path="category.cid">
 						<springForm:option value="0" label="----select category----" />
@@ -84,7 +84,8 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 			</div>
 			<br>
 			<br>
-			<div class="form-group">
+			
+			<%-- <div class="form-group">
 			<springForm:label class="control-label col-sm-4"
 					style="text-align:right; color:maroon;" path="image"> Upload Image:</springForm:label>
 					<div class="control-label col-sm-4 col-sm-4">
@@ -92,7 +93,8 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 						placeholder="upload image" />
 			</div>
 			</div>
-			<br><br><br> 
+			<br><br><br>  --%>
+			
 			<div class="form-group">
 			<div class="col-sm-12">
 			<div class= "text-center">

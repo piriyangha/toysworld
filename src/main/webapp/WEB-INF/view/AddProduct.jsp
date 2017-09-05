@@ -31,21 +31,20 @@ body {
 	<div class="container">
 		<h2 style="text-align: center; color: purple;">Add Product</h2>
 		<br>
-		<springForm:form action="${contextRoot}/saveproduct" method="POST"
-			modelAttribute="product">
+	<springForm:form action="${contextRoot}/saveproduct" method="POST"
+			modelAttribute="product"  class="form-horizontal">
 			<div class="form-group">
 				<springForm:label class="control-label col-sm-4"
 					style="text-align:right;color:maroon;" path="pname">Product Name:</springForm:label>
 				<div class="control-label col-sm-4 col-sm-4">
 					<springForm:input path="pname" class="form-control"
 						placeholder="Enter product name"/>
-						<springForm:errors path="pname"></springForm:errors>
+						 <springForm:errors path="pname"><p style="color:purple">please Enter product name </p>
+						</springForm:errors> 
 				</div>
 			</div>
-			<br>
-			<br>
-			<br>
-			<springForm:input type="hidden" path="pid" class="form-control" />
+			
+	<springForm:input type="hidden" path="pid" class="form-control" />
 
 			<div class="form-group">
 				<springForm:label class="control-label col-sm-4"
@@ -56,8 +55,7 @@ body {
 						
 				</div>
 			</div>
-			<br>
-			<br>
+			
 			<div class="form-group">
 				<springForm:label class="control-label col-sm-4"
 					style="text-align:right; color:maroon;" path="stock">Stock:</springForm:label>
@@ -67,19 +65,17 @@ body {
 						
 				</div>
 			</div>
-			<br>
-			<br>
+			
 			<div class="form-group">
 				<springForm:label class="control-label col-sm-4"
 					style="text-align:right; color:maroon;" path="price">price:</springForm:label>
 				<div class="control-label col-sm-4 col-sm-4">
 					<springForm:input path="price" class="form-control"
 						placeholder="Enter price" />
-						<%-- <springForm:errors path="price"></springForm:errors> --%>
+						<%-- <springForm:errors path="price"><p style="color:purple">Enter the price value</p></springForm:errors>  --%>
 				</div>
 			</div>
-			<br>
-			<br>
+			
 			<div class="form-group">
 				<springForm:label class="control-label col-sm-4"
 					style="text-align:right; color:maroon;" path="">Select category:</springForm:label>
@@ -93,18 +89,16 @@ body {
 
 				</div>
 			</div>
-			<%-- <br>
-			<br>
-			
-			<div class="form-group">
+			 			
+			<%-- <div class="form-group">
 			<springForm:label class="control-label col-sm-4"
 					style="text-align:right; color:maroon;" path="image"> Upload Image:</springForm:label>
 					<div class="control-label col-sm-4 col-sm-4">
 			 <springForm:input type="file" path="image" class="form-control"
 						placeholder="upload image" />
 			</div>
-			</div> --%>
-			<br><br><br> 
+			</div> 
+			<br><br><br>  --%>
 
 
 			<div class="form-group">

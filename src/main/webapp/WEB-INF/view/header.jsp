@@ -43,19 +43,34 @@ body {
 	<div class="container">
 		<ul class="nav navbar-nav" style="color: white">
 			<li><a href="#"> Home <span class="glyphicon glyphicon-home"></span></a></li>
+			
+			
+			
+			<%-- <li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Shop All Catagories<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><c:forEach items=""${cat}" var="c">
+								<a href="contextRoot/categorydropdown/${c.cid}">${c.catname}</a>
+							</c:forEach> </li></ul>
+					</li> --%>
+			
+			
+			
+			
+			<%-- 
 			<li class="dropdown">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#"> Shop All Catagories <span
 					class="glyphicon glyphicon-list"></span></a>
 					<ul class="dropdown-menu">
 					<li class="dropdown-header"> Toys For Kids(2 yrs+)</li>
       					<c:forEach items="${cat}" var="c">
-      					<li><a href="contextRoot/${c.cid}"/>>"${c.catname}"</li>
+      					<li> <a href="contextRoot/categorydropdown/${c.cid}"> "${c.catname}"</a></li>
                                    					
       					</c:forEach>
      				    
      				    
    					 </ul>
-			 
+			  --%>
 			<li><a href="#"> Contact <span
 					class="glyphicon glyphicon-chevron-down"></span></a></li>
 			<li><a href="addproduct"> Addproduct </a></li>
@@ -65,7 +80,7 @@ body {
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="register"><span class="glyphicon glyphicon-user"></span>
 					Register</a></li>
-			<li><a href="Login"><span class="glyphicon glyphicon-log-in"></span>
+			<li><a href="login"><span class="glyphicon glyphicon-log-in"></span>
 					Login</a></li>
 		</ul>
 	</div>
