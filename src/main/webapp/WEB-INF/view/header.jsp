@@ -1,7 +1,8 @@
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<%@taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 	
 <%@page isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -71,18 +72,40 @@ body {
      				    
    					 </ul>
 			  --%>
-			<li><a href="#"> Contact <span
+			<li><a href="#"> About Us<span
 					class="glyphicon glyphicon-chevron-down"></span></a></li>
-			<li><a href="addproduct"> Addproduct </a></li>
-			<li><a href="addcategory"> Addcategory </a></li>
+					
+					<c:url value="/admin/addproduct" var="url1"></c:url>
+					<li><c:if
+						test="${pageContext.request.userPrincipal.name!=null }">
+						<security:authorize access="hasRole('ROLE_ADMIN')">
+							<a href="${url1}">Add Product</a>
+
+						</security:authorize></c:if></li>
+						<c:url value="/admin/addcategory" var="url2"></c:url>
+						<li><c:if
+						test="${pageContext.request.userPrincipal.name!=null }">
+						<security:authorize access="hasRole('ROLE_ADMIN')">
+							<a href="${url2}">Add category</a>
+
+						</security:authorize></c:if></li>
+					
+			
+			
 			<li><a href="ProductList"> ProductList </a></li>
 		</ul>
+		<c:if test="${pageContext.request.userPrincipal.name==null }">
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="register"><span class="glyphicon glyphicon-user"></span>
 					Register</a></li>
-			<li><a href="login"><span class="glyphicon glyphicon-log-in"></span>
-					Login</a></li>
-		</ul>
+			<li><a href="login?Login=true"><span class="glyphicon glyphicon-log-in"></span>
+					Login</a></li></ul></c:if>
+					
+			<c:url value="/j_spring_security_logout" var="logout"/>		
+			<c:if test="${pageContext.request.userPrincipal.name !=null }">	
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="${logout}">Logout</a></li>	</ul>						
+	        </c:if>
 	</div>
 	</nav>
 	

@@ -5,7 +5,7 @@
 	uri="http://www.springframework.org/tags/form"%>
 	<%@page isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@include file="header.jsp"%>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -18,6 +18,7 @@ body {
 </style>
 </head>
 <body>
+<%@include file="header.jsp"%>
 	<div>
 		<div class="container">
 			<h3 style="text-align:center; color:orange;">Details about the Product</h3>
@@ -48,23 +49,23 @@ body {
 
 			
 			</table>
-			<%-- <c:if test="${product.stock==0}">
+			 <c:if test="${product.stock==0}">
                       Out Of Stock
                       </c:if>
 
 			<c:if test="${product.stock!=0 }">
-				<c:url value="/cart/addtocart/${product.id }" var="url"></c:url>
-				<form action="${url }">
-					Enter Units : <input type="text" name="units">
-
-					<button type="submit"
-						style="background: none; border: none; padding: 0"
-						class="btn btn-default btn-lg">
-						<span class="glyphicon glyphicon-shopping-cart"></span>
-					</button>
-				</form>
+				<c:url value="/cart/addtocart/${product.pid }" var="url"></c:url> 
+				<form action="${url}">	
+					<div class="form-group">
+				<div class="col-sm-12">
+					<div class="text-center">
+						<input type="submit" class="btn btn-warning btn-lg" value="Add to cart" > 
+					</div>
+				</div>
+			</div>
+			</form>	
 			</c:if>
-			<br> <br> --%>
+			<br> <br> 
 			
 
 		</div>

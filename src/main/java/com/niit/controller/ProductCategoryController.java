@@ -39,7 +39,7 @@ public class ProductCategoryController {
 	@Autowired
 	HttpServletRequest request;
 
-	@RequestMapping(value = "/addproduct")
+	@RequestMapping(value = "/admin/addproduct")
 	public String showAddProduct(Model model) {
 		List<Category> category = categorydao.retrieveAllCategory();
 		model.addAttribute("cat", category);
@@ -84,7 +84,7 @@ public class ProductCategoryController {
 		return "ProductList";
 	}
 
-	@RequestMapping(value = "/deleteProduct/{pid}")
+	@RequestMapping(value = "/admin/deleteProduct/{pid}")
 	public String deleteProduct(@PathVariable int pid) {
 		productdao.deleteProduct(pid);
 		return "ProductList";
@@ -97,7 +97,7 @@ public class ProductCategoryController {
 		return "viewProduct";
 	}
 
-	@RequestMapping(value = { "/all/product/editform/{pid}" })
+	@RequestMapping(value = { "/admin/product/editform/{pid}" })
 	public String editForm(@PathVariable int pid, Model model) {
 		model.addAttribute("cat", categorydao.retrieveAllCategory());
 		Product product = productdao.getProductById(pid);

@@ -13,7 +13,7 @@ public class CategoryController {
 	@Autowired
 	CategoryDao categorydao;
 	
-	@RequestMapping("/addcategory")
+	@RequestMapping("/admin/addcategory")
 	public String showAddCategory(Model model )
 	{   
 		model.addAttribute("category",new Category());

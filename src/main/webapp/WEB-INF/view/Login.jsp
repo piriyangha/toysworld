@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@page isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,27 +21,30 @@
 	body
 	{
 	
-background-image:url(" http://www.planwallpaper.com/static/images/33.jpg");
+background-image:url("https://i.pinimg.com/originals/96/95/0a/96950a894a19d012e2c2f3cb1f916a11.jpg");
 
 	}
 	</style>
 
 </head>
 <body>
-
-	<form>
+<c:url value="/j_spring_security_check" var="login"></c:url>
+	<form action="${login}" method="post">
 	<div class="container">
 		<div class="row">
         <div class="col-md-offset-5 col-md-3">
             <div class="form-login">
 			<br><br><br>
-				<h4 style="color:purple; text-align:center">Welcome To Toysworld
+				<h4 style="color:red; text-align:center">Welcome To Toysworld
 					</h4>
-           
-      Username:       <input type="username" name="username" class="form-control input-sm chat-input" placeholder="username" />
+           <c:if test="${error!=null}">
+           <div class="alert alert-danger">
+           <strong>check your username or password</strong></div></c:if>
+      Username:       <input type="text" name="j_username" class="form-control input-sm chat-input" placeholder="username" />
             <br>
-      Password:      <input type="password" name="password" class="form-control input-sm chat-input" placeholder="password" />
+      Password:      <input type="password" name="j_password" class="form-control input-sm chat-input" placeholder="password" />
             <br>
+            
             <div class="wrapper">
             <span class="group-btn">     
                 <input type="submit" value="Login"> <i class="fa fa-sign-in"></i>
