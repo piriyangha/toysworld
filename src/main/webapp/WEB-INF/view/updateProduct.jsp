@@ -23,7 +23,7 @@ background-image: url("https://www.transparenttextures.com/patterns/pool-table.p
 
 	}
 	</style>
-	<c:set var="contextRoot" value="${pagecontext.request.contextRoot}"> </c:set>
+	<c:set var="contextRoot" value="${pagecontext.request.contextPath}"> </c:set>
 	<c:url value="/all/product/updateproduct" var="url"></c:url>
 </head>
 

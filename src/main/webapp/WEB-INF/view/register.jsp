@@ -59,10 +59,10 @@
 				</div>
 			<br><br>
 				<div class="form-group">
-				<springForm:label class="control-label col-sm-4" path="address">ADDRESS:</springForm:label> 
+				<springForm:label class="control-label col-sm-4" path="phone">Phone:</springForm:label> 
 					<div class="control-label col-sm-8">
-					<springForm:textarea  path="address" class="form-control"
-						placeholder="Enter address" rows="6" columns="25"/>
+					<springForm:input  path="phone" class="form-control"
+						placeholder="Enter phone number"/>
 						<springForm:errors path="username" cssStyle="color:red">
                     <p style="color:red">Please enter address</p></springForm:errors>
 				</div>
@@ -71,7 +71,7 @@
 			<div class="form-group">
 			<div class="col-sm-10">
 			<div class= "text-center">
-			<input type="submit" class="btn btn-success btn-sm" value="submit"/>
+			<input type="submit" class="btn btn-warning btn-sm" value="submit">
 			</div>
 			</div>
 			</div>

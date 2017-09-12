@@ -10,5 +10,14 @@ public class homeController {
 	public String headerPage() {
 		return "index";
 	}
-	
+	@RequestMapping(value={"/aboutus"})
+	public String aboutUsPage()
+	{
+		return"aboutUs";
+	}
+	@RequestMapping(value={"/contactus"})
+	public String contactUsPage()
+	{
+		return"contactUs";
+	}
 	}

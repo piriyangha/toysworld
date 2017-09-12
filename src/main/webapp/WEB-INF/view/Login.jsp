@@ -50,6 +50,10 @@ background-image:url("https://i.pinimg.com/originals/96/95/0a/96950a894a19d012e2
                 <input type="submit" value="Login"> <i class="fa fa-sign-in"></i>
             </span>
             </div>
+            <div class="bottom text-center">
+								New here ? <a href="register"><b>Register</b></a>
+							</div>
+            </div>
             </div>
         
         </div>

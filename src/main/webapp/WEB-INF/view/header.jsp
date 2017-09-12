@@ -10,7 +10,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;">
 <meta charset="utf-8">
-<c:set var="contextRoot" value="${pagecontext.request.contextRoot}"> </c:set>
+
 <title>Header</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -19,7 +19,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<c:set var="contextRoot" value="${pageContext.request.contextPath }"></c:set>
+	<link rel="stylesheet" href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
+	<c:set var="contextRoot" value="${pageContext.request.contextPath}"> </c:set>
 <style type="text/css">
 .navbar li a {
 	color: white;
@@ -43,17 +44,17 @@ body {
 	</div>
 	<div class="container">
 		<ul class="nav navbar-nav" style="color: white">
-			<li><a href="#"> Home <span class="glyphicon glyphicon-home"></span></a></li>
+			<li><a href="index"> Home <span class="glyphicon glyphicon-home"></span></a></li>
 			
 			
 			
-			<%-- <li class="dropdown"><a href="#" class="dropdown-toggle"
+			 <li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Shop All Catagories<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><c:forEach items=""${cat}" var="c">
+						<li><c:forEach items="${cat}" var="c">
 								<a href="contextRoot/categorydropdown/${c.cid}">${c.catname}</a>
 							</c:forEach> </li></ul>
-					</li> --%>
+					</li> 
 			
 			
 			
@@ -72,8 +73,7 @@ body {
      				    
    					 </ul>
 			  --%>
-			<li><a href="#"> About Us<span
-					class="glyphicon glyphicon-chevron-down"></span></a></li>
+			
 					
 					<c:url value="/admin/addproduct" var="url1"></c:url>
 					<li><c:if
@@ -106,6 +106,8 @@ body {
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="${logout}">Logout</a></li>	</ul>						
 	        </c:if>
+	        <ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Cart </a></li>	</ul>	
 	</div>
 	</nav>
 	

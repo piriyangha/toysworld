@@ -15,7 +15,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="<c:url value="/resource/css/datatable.min.css" />"
 	rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<script type="text/javascript" ></script>
 <script src="<c:url value="/resource/javascipt/datatable.min.js" />"></script>
 
 <title>Product List</title>
@@ -67,14 +68,10 @@ th{
 	</table>
 	<script>
 	$(document).ready(function() {
-		var searchCondition = '${searchCondition}';
-		$('.table').DataTable({
-			"lengthMenu" : [ [ 3, 5, 7, -1 ], [ 3, 5, 7, "All" ] ],
-			"oSearch" : {
-				"sSearch" : searchCondition
-			}
-		})
-	});
+	    $('#example').DataTable( {
+	        "ajax": '../ajax/data/arrays.txt'
+	    } );
+	} );
 
 </script>
 	

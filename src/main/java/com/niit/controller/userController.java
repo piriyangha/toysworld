@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.niit.dao.userdao;
+import com.niit.dao.UserDao;
 import com.niit.model.User;
 
 @Controller
 public class userController {
 	private static final boolean TRUE = false;
 	@Autowired
-	userdao userDao;
+	UserDao userDao;
 	@RequestMapping(value = "/register")
 	public String goToRegisterPage(Model model) {
 		   model.addAttribute("user",new User());

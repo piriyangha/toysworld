@@ -27,7 +27,7 @@ body {
 					<td>Product Name:</td>
 					<td>${product.pname}</td>
 				</tr>
-				<c:url value="/resource/image/${product.pid }.jpg" var="imageUrl"></c:url>
+				<c:url value="/resource/image/${product.pid}.jpg" var="imageUrl"></c:url>
 			
 				<tr>
 					<td>Product Image</td>
@@ -54,7 +54,7 @@ body {
                       </c:if>
 
 			<c:if test="${product.stock!=0 }">
-				<c:url value="/cart/addtocart/${product.pid }" var="url"></c:url> 
+				<c:url value="/cart/addtocart/${product.pid}" var="url"></c:url> 
 				<form action="${url}">	
 					<div class="form-group">
 				<div class="col-sm-12">

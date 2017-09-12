@@ -1,10 +1,7 @@
 package com.niit.controller;
 
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
 import java.util.List;
 
 
@@ -131,12 +128,12 @@ public class ProductCategoryController {
 		
 		return "redirect:/index";
 	}
-	/*@RequestMapping(value="/categorydropdown/{cid}")
+    @RequestMapping(value="/categorydropdown/{cid}")
 	public String viewCategory(@PathVariable int cid, Model model)
 	{
 		System.out.println("inside productGetByCategoryId");
 		model.addAttribute("productList",productdao.getProductByCategoryId(cid));
 		return "index";
-	}*/
+	}
 
 }
