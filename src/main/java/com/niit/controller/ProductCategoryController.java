@@ -2,6 +2,10 @@ package com.niit.controller;
 
 
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 
@@ -54,12 +58,13 @@ public class ProductCategoryController {
 			return "AddProduct";
 		}
 		productdao.saveProduct(product);
-		
-		/*MultipartFile image=product.getImage();
+		/*System.out.println("-------Product is saved-----");
+		System.out.println("-------Product name:----- "+product.getPname());
+		MultipartFile image=product.getImage();
 		String imagepath=request.getServletContext().getRealPath("/resource/image");
-		System.out.println("Directory:"+imagepath);
+		System.out.println("---------Directory:-------"+imagepath);
 		Path path=Paths.get(imagepath + File.separator + product.getPid()+".jpg");
-		System.out.println("Path:"+path.toString());
+		System.out.println("-------Path:-----"+path.toString());
 		try {
 			image.transferTo(new File(path.toString()));
 		} catch (IllegalStateException e) {
@@ -68,8 +73,8 @@ public class ProductCategoryController {
 		} catch (IOException e) {
 			
 			e.printStackTrace();
-		}*/
-		
+		}
+		*/
 		return "redirect:/ProductList";
 	}
 

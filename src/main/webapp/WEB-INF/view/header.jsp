@@ -92,7 +92,7 @@ body {
 					
 			
 			
-			<li><a href="ProductList"> ProductList </a></li>
+			<li><a href="ProductList"> ProductList <span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
 		</ul>
 		<c:if test="${pageContext.request.userPrincipal.name==null }">
 		<ul class="nav navbar-nav navbar-right">
@@ -104,7 +104,7 @@ body {
 			<c:url value="/j_spring_security_logout" var="logout"/>		
 			<c:if test="${pageContext.request.userPrincipal.name !=null }">	
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="${logout}">Logout</a></li>	</ul>						
+				<li><a href="${logout}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>	</ul>						
 	        </c:if>
 	        <ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Cart </a></li>	</ul>	

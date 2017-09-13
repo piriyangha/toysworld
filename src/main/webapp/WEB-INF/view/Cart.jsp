@@ -16,11 +16,29 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<c:set var="contextRoot" value="${pagecontext.request.contextPath}"> </c:set>
+	<link rel="stylesheet" href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
+	<style>
+	#nav p{
+	text-align: center;
+	}
+	</style>
 </head>
 <body>
-<%@ include file="header.jsp" %>
-<div class="img-thumbnail">
-		<table class="table table-hover">
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+<p class="navbar-text"> Welcome:${pageContext.request.userPrincipal.name}</p>
+<c:url value="/j_spring_security_logout" var="logout"/>		
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="${logout}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+				</ul>
+				</div>	
+  </nav>
+  <img src="resource/image/cart_image1.jpg">
+  <h4 style="color:maroon;text-align:center;"> <b>Your Cart</b></h4>
+  <br> <br>
+    
+<div>
+		<table class="table table-hover table-condensed">
 			<thead>
 				<tr>
 					<th>Images</th>
@@ -37,14 +55,20 @@
 						<td>${c.product.pname}</td>
 						<td>${c.subquantity}</td>
 						<td>${c.subtotal}</td>
-						<td><a href="#" class="btn btn-default">Remove</a></td>
+						<td><a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a></td>
 					</tr>
 				</c:forEach>
+				<tr><td><span class="col-lg-8"><p><b>Total Cost : Rs. ${cart.grandTotal}</b></p></span></td> </tr>
 			</tbody>
+			
+			<tfoot>
+			<tr>
+			<td> <a href="${contextRoot}/ProductList" class="btn btn-danger"><span class="col-lg-8"><i class="fa fa-angle-left"></i>Continue shopping</span></a></td>
+			<td> <a href="#" class="btn btn-success"><span class="col-lg-8"><i class="fa fa-angle-right"></i>Check out</span></a></td>
+			</tr>
+			</tfoot>
 		</table>
-		<pre>
-			Total Cost : Rs. ${cart.grandTotal}           <a href="#" class="btn btn-danger">Check out</a>
-		</pre>
+		
 		
 	</div>
 

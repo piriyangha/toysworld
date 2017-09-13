@@ -98,7 +98,7 @@ body {
 						placeholder="upload image" />
 			</div>
 			</div> 
-			<br><br><br>  --%>
+			<br><br><br>   --%>
 
 
 			<div class="form-group">
