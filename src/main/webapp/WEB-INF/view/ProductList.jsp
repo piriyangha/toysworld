@@ -38,10 +38,11 @@ th{
 	<h2> Product List</h2>
 	<table  class="table table-responsive">
 		<tr>
-			<th>Product ID</th>
+			
 			<th>Product Name</th>
 			<th>Category</th>
 			<th>Brand name</th>
+			<th>Product Image</th>
 			<th>Product Price</th>
 			<th>Stock</th>
 			<th>Actions</th>
@@ -49,10 +50,12 @@ th{
 
 		<c:forEach items="${product}" var="pro">
 			<tr>
-				<td><c:out value="${pro.pid}" /></td>
+				
 				<td><c:out value="${pro.pname}" /></td>
 				<td><c:out value="${pro.category.catname}" /></td>
 				<td><c:out value="${pro.brandname}" /></td>
+				<c:url value="/resource/image/${pro.pname}.jpg" var="imageUrl"></c:url>
+				<td><img src="${imageUrl}" height="50" width="100"></td>
 				<td><c:out value="${pro.price}" /></td>
 				<td><c:out value="${pro.stock}" /></td>
 
@@ -61,19 +64,12 @@ th{
 				
 				<security:authorize access="hasRole('ROLE_ADMIN')">
 				<a	href=<c:url value="/admin/product/editform/${pro.pid}"/>><span class="glyphicon glyphicon-pencil">| |</span></a> 
-								<a  href=<c:url value="/admin/deleteProduct/${pro.pid}"/>><span class="glyphicon glyphicon-trash">| |</span></a>
+								<a  href=<c:url value="/admin/deleteProduct/${pro.pid}"/>class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></a>
 					</security:authorize></td>
 			</tr>
 		</c:forEach>
 	</table>
-	<script>
-	$(document).ready(function() {
-	    $('#example').DataTable( {
-	        "ajax": '../ajax/data/arrays.txt'
-	    } );
-	} );
-
-</script>
+	
 	
 </body>
 </html>

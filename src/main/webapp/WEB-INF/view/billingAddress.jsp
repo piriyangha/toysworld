@@ -7,6 +7,6 @@
 <title>Billing address</title>
 </head>
 <body>
-
+Billing
 </body>
 </html>

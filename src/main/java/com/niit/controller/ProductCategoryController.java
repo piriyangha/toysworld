@@ -4,11 +4,12 @@ package com.niit.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -23,12 +24,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.niit.dao.CategoryDao;
 import com.niit.dao.ProductDao;
 import com.niit.model.Category;
 import com.niit.model.Product;
+import com.niit.model.User;
 
 @Controller
 @Transactional
@@ -39,6 +42,9 @@ public class ProductCategoryController {
 	CategoryDao categorydao;
 	@Autowired
 	HttpServletRequest request;
+	
+	@Autowired
+	Product productBean;
 
 	@RequestMapping(value = "/admin/addproduct")
 	public String showAddProduct(Model model) {
@@ -54,6 +60,7 @@ public class ProductCategoryController {
 		System.out.println("product is saved");
 		if (result.hasErrors()) {
 			model.addAttribute("cat", categorydao.retrieveAllCategory());
+			productBean = product;
 			model.addAttribute("product", product);
 			return "AddProduct";
 		}
@@ -75,7 +82,8 @@ public class ProductCategoryController {
 			e.printStackTrace();
 		}
 		*/
-		return "redirect:/ProductList";
+		model.addAttribute("product",product);
+		return "ImageUpload";
 	}
 
 	
@@ -89,7 +97,7 @@ public class ProductCategoryController {
 	@RequestMapping(value = "/admin/deleteProduct/{pid}")
 	public String deleteProduct(@PathVariable int pid) {
 		productdao.deleteProduct(pid);
-		return "ProductList";
+		return "redirect:/ProductList";
 	}
 
 	@RequestMapping(value = { "/all/product/viewProduct/{pid}" })
@@ -131,8 +139,36 @@ public class ProductCategoryController {
 		System.out.println("product is updated++");
 		
 		
-		return "redirect:/index";
+		return "ImageUpload";
 	}
+	
+	
+	@RequestMapping(value = "/all/upload",method = RequestMethod.POST)
+	public String uploadImage(@ModelAttribute("product") Product product,Model model) {
+		MultipartFile image = product.getImage();
+		if(image == null){
+			System.out.println("..Image is null..");
+			model.addAttribute("product", productBean);
+			return "ImageUpload";
+		}
+		System.out.println("Product Bean : "+productBean.getPname());
+		System.out.println("Product in method scope : "+ product.getPname());
+		String imagepath=request.getServletContext().getRealPath("/resource/image");
+		System.out.println("Directory:"+imagepath);
+		Path path=Paths.get(imagepath + File.separator + product.getPname()+".jpg");
+		System.out.println("Path:"+path.toString());
+		try {
+			image.transferTo(new File(path.toString()));
+		} catch (IllegalStateException e) {
+			
+			e.printStackTrace();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		return "redirect:/ProductList";
+	}
+	
     @RequestMapping(value="/categorydropdown/{cid}")
 	public String viewCategory(@PathVariable int cid, Model model)
 	{

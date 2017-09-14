@@ -106,8 +106,9 @@ body {
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="${logout}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>	</ul>						
 	        </c:if>
+	        <c:url value="/cart/getcart" var="carturl"></c:url>
 	        <ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Cart </a></li>	</ul>	
+				<li><a href="${carturl}"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Cart </a></li>	</ul>	
 	</div>
 	</nav>
 	

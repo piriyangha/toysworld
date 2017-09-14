@@ -32,8 +32,11 @@ public class CartController {
 	CartDao cartdao;
 	@Autowired
 	CartItemDao cartitemdao;
+	
+	@Autowired
+	User user;
 	@RequestMapping(value={"/cart/addtocart/{pid}"})
-	public String addToCart(@PathVariable int pid, Principal principal, Model model) throws NullPointerException
+	public String addToCart(@PathVariable int pid, Principal principal, Model model)
 	{
 		User user = productdao.getUserByUsername(principal.getName());//fetching user details
 		System.out.println(user.getUsername());
@@ -56,7 +59,9 @@ public class CartController {
 		}
 		if((cartItem = cartitemdao.getCartItemById(pid,cart.getCartid()))!=null)//checking cartitem alreday exits in cart using card id and product id
          {
+			System.out.println("-----No cartitem found in cart-----");
 			cartItem.setSubquantity(cartItem.getSubquantity() + 1);//if the item already exist and the user again select that item means it adds the quantity
+			
 			cartItem.setSubtotal(cartItem.getSubquantity() * cartItem.getProduct().getPrice());//according to the quantity the price of product gets multiplies
 			cartItem.setCart(cart);//setting the cart
             cartItems = cart.getCartItems();
@@ -72,19 +77,18 @@ public class CartController {
          }
          }
 		else{
+			System.out.println("-----cartitem found in cart-----");
 			
 			cartItem=new CartItem();// if the cart item was empty
 			cartItem.setProduct(product);//set the selected cartitem in cart
 			cartItem.setSubquantity(1);//make the quantity as 1.
 			cartItem.setSubtotal(cartItem.getSubquantity() * cartItem.getProduct().getPrice());
 			cartItem.setCart(cart);
-			try {
-				cartItems = cart.getCartItems();//cart items already present
-				
-			} catch (Exception e) {
-				
-				cartItems = new ArrayList<CartItem>();//new cart item list created
-			}
+			cartItems = cart.getCartItems();//cart items already present
+				if(cartItems == null){
+					cartItems = new ArrayList<CartItem>();
+				}
+			
 			cartItems.add(cartItem);//cart item values are set
 			
 		}
@@ -103,6 +107,13 @@ public class CartController {
 		cartdao.saveOrUpdate(cart);
 		model.addAttribute("cart", cart);
         return "Cart";
+	}
+	
+	@RequestMapping("/checkout_")
+	public String getUserForCheckOut(Principal principal){
+		User user = productdao.getUserByUsername(principal.getName());
+		this.user = user;
+		return "redirect:checkout?userId="+user.getId();
 	}
 	
 }

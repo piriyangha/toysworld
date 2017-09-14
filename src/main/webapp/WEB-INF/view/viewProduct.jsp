@@ -27,7 +27,7 @@ body {
 					<td>Product Name:</td>
 					<td>${product.pname}</td>
 				</tr>
-				<c:url value="/resource/image/${product.pid}.jpg" var="imageUrl"></c:url>
+				<c:url value="/resource/image/${product.pname}.jpg" var="imageUrl"></c:url>
 			
 				<tr>
 					<td>Product Image</td>

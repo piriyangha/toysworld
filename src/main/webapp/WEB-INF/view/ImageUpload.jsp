@@ -23,30 +23,19 @@
 	<div class="container">
 		<h2 style="text-align: center; color: purple;">Upload image</h2>
 		<br>
-		<springForm:form action="${contextRoot}/upload/image" method="POST"
-			modelAttribute="productImage" enctype="multipart/form-data">
+		<springForm:form action="${contextRoot}/all/upload" method="POST"
+			enctype="multipart/form-data" modelAttribute="product">
 			<div class="form-group">
-				<springForm:label class="control-label col-sm-4"
-					style="text-align:right; color:maroon;" path="image"> Upload Image : </springForm:label>
+				<springForm:hidden path="pname"/>
+			</div>
+			<div class="form-group">
+				<springForm:label path="image" class="control-label col-sm-4"
+					style="text-align:right; color:maroon;"> Upload Image : </springForm:label>
 				<div class="control-label col-sm-4 col-sm-4">
-					<springForm:input type="file" path="image" class="form-control"
-						placeholder="upload image" />
+					<springForm:input type="file" class="form-control"
+						placeholder="upload image" name="image" path="image" />
 				</div>
 			</div>
-			<br>
-			<br>
-			<br>
-
-			<div class="form-group">
-				<springForm:label class="control-label col-sm-4"
-					style="text-align:right;color:maroon;" path="pname">Product Name:</springForm:label>
-				<div class="control-label col-sm-4 col-sm-4">
-					<springForm:input path="pname" class="form-control"
-						placeholder="Enter product name" />
-					<springForm:errors path="pname"></springForm:errors>
-				</div>
-			</div>
-
 			<div class="form-group">
 				<div class="col-sm-12">
 					<div class="text-center">
