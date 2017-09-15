@@ -50,9 +50,10 @@
 			</thead>
 			<tbody>
 				<c:forEach items="${cart.cartItems}" var="c">
-					<tr>
+					
 					<c:url value="/resource/image/${product.pname}.jpg" var="imageUrl"></c:url>
-						<td><img src="${imageUrl}" height="50" width="100"></td>
+					   <tr>
+						<td><img src="${imageUrl}" height="80" width="80"></td>
 						<td>${c.product.pname}</td>
 						<td>${c.subquantity}</td>
 						<td>${c.subtotal}</td>

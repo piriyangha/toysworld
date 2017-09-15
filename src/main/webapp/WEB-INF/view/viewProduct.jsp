@@ -31,7 +31,7 @@ body {
 			
 				<tr>
 					<td>Product Image</td>
-					<td><img src="${imageUrl }" height="350" width="650"></td>
+					<td><img src="${imageUrl}" height="300" width="300"></td>
 				</tr>
 				<tr>
 					<td>Brand Name</td>

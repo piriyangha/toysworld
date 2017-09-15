@@ -55,9 +55,5 @@ public class userController {
 		     return "Login";
 	     
 	}
-	/*@RequestMapping(value = "/login")
-	public String logOut()
-	{
-		return "index";
-	}*/
+	
 }

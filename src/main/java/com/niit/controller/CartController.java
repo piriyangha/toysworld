@@ -38,7 +38,7 @@ public class CartController {
 	@RequestMapping(value={"/cart/addtocart/{pid}"})
 	public String addToCart(@PathVariable int pid, Principal principal, Model model)
 	{
-		User user = productdao.getUserByUsername(principal.getName());//fetching user details
+		User user = userdao.getUserByUsername(principal.getName());//fetching user details
 		System.out.println(user.getUsername());
 		Product product = productdao.getProductById(pid);//fectching  user clicking product object based on id 
 		System.out.println(product.getPname());
@@ -109,9 +109,19 @@ public class CartController {
         return "Cart";
 	}
 	
+	@RequestMapping("/cart/getcart")
+	public String getCart(Model model,Principal principal) {
+		
+		String username = principal.getName();
+		User user = userdao.getUserByUsername(username);
+		Cart cart = user.getCart();
+		model.addAttribute("cart", cart);
+		return "Cart";
+	}
+	
 	@RequestMapping("/checkout_")
 	public String getUserForCheckOut(Principal principal){
-		User user = productdao.getUserByUsername(principal.getName());
+		User user = userdao.getUserByUsername(principal.getName());
 		this.user = user;
 		return "redirect:checkout?userId="+user.getId();
 	}
